@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native/types";
-
+import { StyleSheet } from "react-native";
+import colors from "../../../constants/colors";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -8,11 +8,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'black'
     },
     title: {
-        fontSize: 20,
+        fontSize: 50,
         fontWeight: "bold",
-        color: 'grey'
+        color: colors.theme_red
     },
+    subtitle: {
+        fontSize: 14,
+        color: colors.theme_gray
 
+    }
 });
 
 export default styles;
