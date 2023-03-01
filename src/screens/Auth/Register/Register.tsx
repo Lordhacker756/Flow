@@ -25,7 +25,8 @@ const Register = ({navigation}) => {
             opacity: pressed ? 0.8 : 1,
           },
           styles.signup,
-        ]}>
+        ]}
+        onPress={() => navigation.navigate('ProfileSetup')}>
         <Text style={styles.signupText}>Sign Up</Text>
         <Ioncicons name="chevron-forward" size={20} color="#fff" />
       </Pressable>
