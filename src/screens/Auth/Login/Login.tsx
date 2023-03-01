@@ -29,6 +29,16 @@ const Login = ({navigation}) => {
         <Text style={styles.loginText}>Login</Text>
         <Ioncicons name="chevron-forward" size={20} color="#fff" />
       </Pressable>
+      <Pressable
+        style={({pressed}) => [
+          {
+            opacity: pressed ? 0.8 : 1,
+            marginVertical: 15,
+          },
+        ]}
+        onPress={() => navigation.navigate('ForgotPassword')}>
+        <Text style={styles.signUpBtnText}>Forgot Password ?</Text>
+      </Pressable>
       <View style={styles.row}>
         <Text style={styles.signUpText}>Don't have an account?</Text>
         <Pressable
