@@ -5,6 +5,7 @@ import {
   TextInput,
   Pressable,
   Image,
+  KeyboardAvoidingView,
 } from 'react-native';
 import React from 'react';
 import Ioncicons from 'react-native-vector-icons/Ionicons';
@@ -30,7 +31,7 @@ const Register = ({navigation}) => {
         <Text style={styles.signupText}>Sign Up</Text>
         <Ioncicons name="chevron-forward" size={20} color="#fff" />
       </Pressable>
-      <View style={styles.row}>
+      <KeyboardAvoidingView style={styles.row}>
         <Text style={styles.LogInText}>Already have an account?</Text>
         <Pressable
           style={({pressed}) => [
@@ -41,7 +42,7 @@ const Register = ({navigation}) => {
           onPress={() => navigation.navigate('Login')}>
           <Text style={styles.logInBtnText}>Login</Text>
         </Pressable>
-      </View>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };

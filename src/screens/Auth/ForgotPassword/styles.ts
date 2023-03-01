@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'black',
-        padding: 20,
+        paddingHorizontal: 20,
         alignItems: "center",
         justifyContent: "center"
     },
@@ -40,7 +40,42 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'center',
     },
+    subtitle: {
+        color: colors.theme_gray,
+        fontSize: 18,
+        marginBottom: 10,
+    },
+    otpContainer: {
+        width: 350,
+        height: 150,
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+    },
+    recoveryEmail: {
+        color: colors.theme_red,
+        fontWeight: 'bold',
+    },
+    borderStyleBase: {
+        width: 150,
+        height: 150
+    },
 
+    borderStyleHighLighted: {
+        borderColor: colors.theme_red,
+    },
+
+    underlineStyleBase: {
+        width: 30,
+        height: 45,
+        borderWidth: 2,
+        borderColor: colors.theme_red,
+        backgroundColor: colors.input_background,
+        padding: 10,
+    },
+
+    underlineStyleHighLighted: {
+        borderColor: 'white',
+    },
 });
 
 export default styles

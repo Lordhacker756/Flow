@@ -41,7 +41,7 @@ export default function AuthStack() {
         component={NewPassword}
         options={{
           headerShown: true,
-          headerTitle: 'Forgot Password',
+          headerTitle: 'New Password',
           headerTitleStyle: {
             color: 'white',
             fontSize: 20,

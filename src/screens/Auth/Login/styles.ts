@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginVertical: 10,
         position: 'absolute',
-        bottom: 40,
+        bottom: 20,
+        height: 20,
     },
     signUpText: {
         color: 'white',
