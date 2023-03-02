@@ -1,11 +1,11 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
 import useAuth from '../hooks/useAuth';
 
-export default function MainNavigation({status}) {
+export default function MainNavigation() {
   const user = useAuth();
-  console.log(status);
-  return status === 'true' && user ? <MainStack /> : <AuthStack />;
+
+  return user ? <MainStack /> : <AuthStack />;
 }

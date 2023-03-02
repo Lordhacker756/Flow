@@ -14,9 +14,11 @@ const useAuth = () => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
         setUser(user);
-        AsyncStorage.setItem('loggedIn', 'true');
+        AsyncStorage.setItem('user', JSON.stringify(user));
+        console.log(user);
       } else {
         setUser(null);
+        AsyncStorage.removeItem('user');
       }
     });
 

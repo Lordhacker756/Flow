@@ -8,12 +8,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [userStatus, setUserStatus] = useState('');
-
+  const [profileCompleted, setProfileCompleted] = useState('');
   const getUserStatus = async () => {
     try {
       const value = await AsyncStorage.getItem('loggedIn');
+      const email = await AsyncStorage.getItem('email');
+      const profileCompleted = await AsyncStorage.getItem('profileCompleted');
       if (value !== null) {
         setUserStatus('true');
+        setProfileCompleted(profileCompleted);
+        console.log(value, email, profileCompleted);
       }
     } catch (e) {
       console.log(e);
@@ -32,7 +36,7 @@ const App = () => {
     <Splash />
   ) : (
     <NavigationContainer>
-      <MainNavigation status={userStatus} />
+      <MainNavigation status={userStatus} profileCompleted={profileCompleted} />
     </NavigationContainer>
   );
 };
