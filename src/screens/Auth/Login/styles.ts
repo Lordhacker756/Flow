@@ -44,10 +44,8 @@ const styles = StyleSheet.create({
         columnGap: 10,
         width: 300,
         justifyContent: 'center',
-        marginVertical: 10,
-        position: 'absolute',
-        bottom: 20,
-        height: 20,
+        marginTop: 80,
+
     },
     signUpText: {
         color: 'white',
@@ -62,5 +60,10 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
     },
+    error: {
+        color: 'red',
+        fontSize: 15,
+        fontWeight: 'bold',
+    }
 });
 export default styles;

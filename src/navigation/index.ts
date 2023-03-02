@@ -1,3 +1,3 @@
-import AuthStack from "./AuthStack";
+import MainNavigation from "./MainNavigation";
 
-export { AuthStack };
+export default MainNavigation;
