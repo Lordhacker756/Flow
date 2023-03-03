@@ -57,6 +57,57 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
     },
+    graphContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+    },
+    progressCount: {
+        color: "white",
+        fontSize: 25,
+        fontWeight: "bold",
+        position: "absolute",
+        top: 60,
+        left: 55,
+        transform: [{ translateX: -20 }, { translateY: -20 }],
+        textAlign: "center",
+    },
+    taskList: {
+        width: '100%',
+        flexDirection: "column",
+        height: 380,
+        paddingBottom: 20,
+    },
+    taskItem: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginVertical: 10,
+        padding: 20,
+        backgroundColor: colors.theme_dark,
+        borderRadius: 10,
+    },
+    taskItemTitle: {
+        color: "white",
+        fontSize: 20,
+        fontWeight: "bold",
+    },
+    taskDuration: {
+        color: colors.theme_gray,
+        fontSize: 14,
+        marginTop: 5,
+        fontWeight: "bold",
+    },
+    startPomodoro: {
+        backgroundColor: colors.theme_red,
+        fontSize: 12,
+        width: 50,
+        height: 50,
+        borderRadius: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        fontWeight: "bold",
+    },
 
 });
 

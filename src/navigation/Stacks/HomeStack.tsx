@@ -1,5 +1,11 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {EditTask, Home, Notifications, Pomodoro} from '../../screens/Main';
+import {
+  AllTasks,
+  EditTask,
+  Home,
+  Notifications,
+  Pomodoro,
+} from '../../screens/Main';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
@@ -8,14 +14,15 @@ import colors from '../../constants/colors';
 const HomeStack = () => {
   const Stack = createNativeStackNavigator();
 
-  const Header = () => {
+  const Header = ({navigation}) => {
     return (
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <Text style={styles.headerText}>F L O W</Text>
         </View>
         <View style={styles.headerRight}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Notifications')}>
             <Feather name="bell" size={25} color={colors.theme_red} />
           </TouchableOpacity>
         </View>
@@ -26,7 +33,15 @@ const HomeStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: {
+          color: colors.theme_gray,
+          fontSize: 20,
+          fontWeight: 'bold',
+        },
+        headerTintColor: colors.theme_gray,
       }}
       initialRouteName="Home">
       <Stack.Screen
@@ -34,12 +49,13 @@ const HomeStack = () => {
         component={Home}
         options={{
           headerShown: true,
-          header: () => <Header />,
+          header: props => <Header {...props} />,
         }}
       />
       <Stack.Screen name="EditTask" component={EditTask} />
       <Stack.Screen name="Notifications" component={Notifications} />
       <Stack.Screen name="Pomodoro" component={Pomodoro} />
+      <Stack.Screen name="AllTasks" component={AllTasks} />
     </Stack.Navigator>
   );
 };
