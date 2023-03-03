@@ -4,29 +4,13 @@ import {Home, Splash} from './src/screens/Main';
 import Login from './src/screens/Auth/Login';
 import {NavigationContainer} from '@react-navigation/native';
 import MainNavigation from './src/navigation';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store';
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [userStatus, setUserStatus] = useState('');
-  const [profileCompleted, setProfileCompleted] = useState('');
-  const getUserStatus = async () => {
-    try {
-      const value = await AsyncStorage.getItem('loggedIn');
-      const email = await AsyncStorage.getItem('email');
-      const profileCompleted = await AsyncStorage.getItem('profileCompleted');
-      if (value !== null) {
-        setUserStatus('true');
-        setProfileCompleted(profileCompleted);
-        console.log(value, email, profileCompleted);
-      }
-    } catch (e) {
-      console.log(e);
-      setUserStatus('false');
-    }
-  };
 
   useEffect(() => {
-    getUserStatus();
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -36,7 +20,9 @@ const App = () => {
     <Splash />
   ) : (
     <NavigationContainer>
-      <MainNavigation status={userStatus} profileCompleted={profileCompleted} />
+      <Provider store={store}>
+        <MainNavigation />
+      </Provider>
     </NavigationContainer>
   );
 };

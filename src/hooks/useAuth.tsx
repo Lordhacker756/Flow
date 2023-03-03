@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import {getAuth, onAuthStateChanged, User} from 'firebase/auth';
 import {firebaseConfig} from '../config/firebase';
 import {initializeApp} from 'firebase/app';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useAppDispatch} from './hooks';
+import {userLogin, userLogout} from '../redux/slices/userSlice';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -10,15 +11,16 @@ const auth = getAuth(app);
 const useAuth = () => {
   const [user, setUser] = React.useState<User | null>(null);
 
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
         setUser(user);
-        AsyncStorage.setItem('user', JSON.stringify(user));
-        console.log(user);
+        dispatch(userLogin(user.email));
       } else {
         setUser(null);
-        AsyncStorage.removeItem('user');
+        dispatch(userLogout());
       }
     });
 

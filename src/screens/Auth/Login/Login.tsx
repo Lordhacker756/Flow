@@ -58,7 +58,9 @@ const Login = ({navigation}) => {
       <TextInput
         placeholder="Email"
         style={styles.input}
+        color="white"
         value={credentials.email}
+        placeholderTextColor="grey"
         onChangeText={(text: string) =>
           setCredentials({...credentials, email: text})
         }
@@ -69,6 +71,8 @@ const Login = ({navigation}) => {
         placeholder="Password"
         style={styles.input}
         secureTextEntry
+        placeholderTextColor="grey"
+        color="white"
         onChangeText={(pass: string) =>
           setCredentials({...credentials, password: pass})
         }

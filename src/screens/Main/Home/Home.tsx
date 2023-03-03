@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './styles';
 import {Button} from 'react-native';
 import {getAuth, signOut} from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Home = () => {
   const auth = getAuth();
@@ -15,6 +16,7 @@ const Home = () => {
           signOut(auth)
             .then(() => {
               console.log('Signed out');
+              AsyncStorage.removeItem('user');
             })
             .catch(error => {
               console.log(error);

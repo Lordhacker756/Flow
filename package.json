@@ -16,6 +16,7 @@
     "@react-navigation/material-bottom-tabs": "^6.2.15",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
+    "@reduxjs/toolkit": "^1.9.3",
     "@twotalltotems/react-native-otp-input": "^1.3.5",
     "firebase": "^9.17.1",
     "react": "18.2.0",

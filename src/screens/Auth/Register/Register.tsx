@@ -40,6 +40,7 @@ const Register = ({navigation}) => {
           credentials.email,
           credentials.password,
         );
+        await AsyncStorage.setItem('user', 'true');
         setLoading(false);
       } catch (error) {
         setError(error.message);
