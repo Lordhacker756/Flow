@@ -26,13 +26,11 @@ Here's what all I learn't and what I'm still yet to learn  along the journey to 
   <br />
   <div>
     <img src="./designs/Splash.jpg" width="33%">
-    <img src="./designs/Login.jpg
-" width="33%">
+    <img src="./designs/Login.jpg" width="33%">
     <img src="./designs/Register.jpg" width="33%">
   </div>
   <div>
-      <img src="./designs/Forgot Password
-.jpg" width="33%">
+      <img src="./designs/ForgotPassword.jpg" width="33%">
     <img src="./designs/OTP.jpg" width="33%">
     <img src="./designs/Home.jpg" width="33%">
   </div>
