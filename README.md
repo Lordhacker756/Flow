@@ -25,14 +25,14 @@ Here's what all I learn't and what I'm still yet to learn  along the journey to 
   <p>I'll Be Adding More As I Complete Them😄</p>
   <br />
   <div>
-    <img src="./designs/Splash.jpg" width="33%">
-    <img src="./designs/Login.jpg" width="33%">
-    <img src="./designs/Register.jpg" width="33%">
+    <img src="./designs/Splash.jpg" width="25%">
+    <img src="./designs/Login.jpg" width="25%">
+    <img src="./designs/Register.jpg" width="25%">
   </div>
   <div>
-      <img src="./designs/ForgotPassword.jpg" width="33%">
-    <img src="./designs/OTP.jpg" width="33%">
-    <img src="./designs/Home.jpg" width="33%">
+      <img src="./designs/ForgotPassword.jpg" width="25%">
+    <img src="./designs/OTP.jpg" width="25%">
+    <img src="./designs/Home.jpg" width="25%">
   </div>
 </div>
 
