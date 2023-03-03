@@ -1,10 +1,10 @@
-# FLOW App
+# FLOW App 🧠
 
 FLOW is a cross-platform mobile application built using React Native CLI. The app provides various features such as user authentication, a Pomodoro timer, statistical data of productive time using charts, and day planning with a calendar.
 
 [Figma Design]([Figma](https://www.figma.com/file/oZxpQoXpXa0OtuLKtlunLJ/Pomo---Pomodoro-%26-Timer-App-UI-Kit-(Community)?node-id=0%3A1&t=k3yaLaklPcdwo1eM-0))
 
-## What I Learned Building FLOW
+## What I Learned Building FLOW 😎
 
 Here's what all I learn't and what I'm still yet to learn  along the journey to complete the app
 
@@ -36,25 +36,25 @@ Here's what all I learn't and what I'm still yet to learn  along the journey to 
   </div>
 </div>
 
-## Features
+## Features 🔮
 
-### User Authentication
+### User Authentication 🔒
 
 FLOW provides multiple options for user authentication, including email, Google, and phone number. Users can select their preferred method to sign up and log in to the app.
 
-### Pomodoro Timer
+### Pomodoro Timer 🍅
 
 The Pomodoro timer feature of FLOW allows users to track their time spent on a task and take breaks at regular intervals. Users can customize the timer duration according to their preference.
 
-### Statistical Data of Productive Time Using Charts
+### Statistical Data of Productive Time Using Charts 📊
 
 FLOW provides statistical data of productive time using charts, which allows users to track their progress and improve their productivity. The app presents data in an easily understandable format for users to analyze and make informed decisions.
 
-### Day Planning with Calendar
+### Day Planning with Calendar 📅
 
 FLOW provides a day planning feature that allows users to schedule their tasks and events in a calendar. Users can add and modify events, set reminders, and view their schedule for the day.
 
-## Installation
+## Installation ⬇️
 
 To install FLOW on your device, follow these steps:
 
@@ -66,3 +66,5 @@ To install FLOW on your device, follow these steps:
 ## Conclusion
 
 In conclusion, FLOW is a powerful mobile app that can help users improve their productivity and manage their tasks effectively. The app's features, including user authentication, a Pomodoro timer, statistical data of productive time using charts, and day planning with a calendar, make it a valuable tool for anyone looking to improve their productivity.
+
+Feel Free To Suggest any Changes, and Contribute😊
