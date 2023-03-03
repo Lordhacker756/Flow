@@ -2,6 +2,8 @@
 
 FLOW is a cross-platform mobile application built using React Native CLI. The app provides various features such as user authentication, a Pomodoro timer, statistical data of productive time using charts, and day planning with a calendar.
 
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoZxpQoXpXa0OtuLKtlunLJ%2FPomo---Pomodoro-%2526-Timer-App-UI-Kit-(Community)%3Fnode-id%3D0%253A1%26t%3Dk3yaLaklPcdwo1eM-1" allowfullscreen></iframe>
+
 ## What I Learned Building FLOW
 
 While building FLOW, I learned the importance of maintaining a proper folder structure, using TypeScript and splitting screens into simple modules, and separating styles in separate TypeScript modules.
