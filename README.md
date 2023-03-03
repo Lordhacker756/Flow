@@ -2,11 +2,41 @@
 
 FLOW is a cross-platform mobile application built using React Native CLI. The app provides various features such as user authentication, a Pomodoro timer, statistical data of productive time using charts, and day planning with a calendar.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoZxpQoXpXa0OtuLKtlunLJ%2FPomo---Pomodoro-%2526-Timer-App-UI-Kit-(Community)%3Fnode-id%3D0%253A1%26t%3Dk3yaLaklPcdwo1eM-1" allowfullscreen></iframe>
+[Figma Design]([Figma](https://www.figma.com/file/oZxpQoXpXa0OtuLKtlunLJ/Pomo---Pomodoro-%26-Timer-App-UI-Kit-(Community)?node-id=0%3A1&t=k3yaLaklPcdwo1eM-0))
 
 ## What I Learned Building FLOW
 
-While building FLOW, I learned the importance of maintaining a proper folder structure, using TypeScript and splitting screens into simple modules, and separating styles in separate TypeScript modules.
+Here's what all I learn't and what I'm still yet to learn  along the journey to complete the app
+
+- Firebase Authentication (Login & Logout)✅
+- User Registration using Firebase✅
+- React Navigation (Stack + Tab)✅
+- Using Doughnut Charts✅
+- Styling Header and Bottom Navigation✅
+- Rendering Lists (Scroll View and Flatlist)✅
+- ReduxToolkit + ReduxThunk (⚠️Still trying to impliment)
+- Using OTP to login (UI ready, Functionality to be implimented) ⚠️
+- Storing Data in android SQLite ⚠️
+- Fetching and storing data in central store⚠️
+
+
+<div align="center">
+  <h1>Screens Built</h1>
+  <p>I'll Be Adding More As I Complete Them😄</p>
+  <br />
+  <div>
+    <img src="./designs/Splash.jpg" width="33%">
+    <img src="./designs/Login.jpg
+" width="33%">
+    <img src="./designs/Register.jpg" width="33%">
+  </div>
+  <div>
+      <img src="./designs/Forgot Password
+.jpg" width="33%">
+    <img src="./designs/OTP.jpg" width="33%">
+    <img src="./designs/Home.jpg" width="33%">
+  </div>
+</div>
 
 ## Features
 
