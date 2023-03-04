@@ -55,7 +55,13 @@ const HomeStack = () => {
       <Stack.Screen name="EditTask" component={EditTask} />
       <Stack.Screen name="Notifications" component={Notifications} />
       <Stack.Screen name="Pomodoro" component={Pomodoro} />
-      <Stack.Screen name="AllTasks" component={AllTasks} />
+      <Stack.Screen
+        name="AllTasks"
+        component={AllTasks}
+        options={{
+          headerTitle: 'All Tasks',
+        }}
+      />
     </Stack.Navigator>
   );
 };
