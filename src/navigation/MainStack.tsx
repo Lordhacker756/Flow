@@ -6,11 +6,29 @@ import TaskStack from './Stacks/TaskStack';
 import StatisticsStack from './Stacks/StatisticsStack';
 import ProfileStack from './Stacks/ProfileStack';
 import colors from '../constants/colors';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {width} from '../constants/dimesions';
 const Tab = createBottomTabNavigator();
+
+const Header = ({navigation}) => {
+  return (
+    <View style={styles.header}>
+      <View style={styles.headerLeft}>
+        <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
+          <Ionicons
+            name="arrow-back-outline"
+            size={30}
+            color={colors.theme_red}
+          />
+        </TouchableOpacity>
+        <Text style={styles.headerText}>Create New Task</Text>
+      </View>
+    </View>
+  );
+};
 
 export default function MainStack() {
   return (
@@ -78,6 +96,10 @@ export default function MainStack() {
         name="Add"
         component={AddTask}
         options={{
+          headerShown: true,
+          header(props) {
+            return <Header {...props} />;
+          },
           tabBarIcon: ({focused}) => (
             <View
               style={{
@@ -155,5 +177,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     top: 10,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    backgroundColor: 'black',
+  },
+  headerLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    columnGap: 10,
+  },
+  headerText: {
+    color: colors.theme_gray,
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
