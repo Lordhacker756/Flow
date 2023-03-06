@@ -5,6 +5,7 @@ import colors from '../../../constants/colors';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {responsiveHeight} from 'react-native-responsive-dimensions';
 
 const Pomodoro = () => {
   return (
@@ -21,7 +22,7 @@ const Pomodoro = () => {
       </View>
       <View style={styles.counterContainer}>
         <AnimatedCircularProgress
-          size={300}
+          size={responsiveHeight(35)}
           width={25}
           fill={65}
           tintColor={colors.theme_red}

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../../constants/colors';
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const styles = StyleSheet.create({
     pageContainer: {
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginVertical: 30,
+        marginVertical: responsiveHeight(2),
         backgroundColor: colors.theme_dark,
         borderRadius: 10,
         padding: 10
@@ -22,12 +23,12 @@ const styles = StyleSheet.create({
     },
     taskTitle: {
         color: 'white',
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.5),
         fontWeight: 'bold'
     },
     taskTime: {
         color: colors.theme_gray,
-        fontSize: 14,
+        fontSize: responsiveFontSize(2),
         marginVertical: 5,
         fontWeight: 'bold'
     },
@@ -38,12 +39,12 @@ const styles = StyleSheet.create({
     },
     sessionStatus: {
         color: 'white',
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.5),
         fontWeight: 'bold'
     },
     sessionTime: {
         color: colors.theme_gray,
-        fontSize: 14,
+        fontSize: responsiveFontSize(2),
         marginVertical: 5,
         fontWeight: 'bold'
     },
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 10,
+        marginVertical: responsiveHeight(1.8),
     },
     pomodoroDetails: {
         position: 'absolute',
@@ -64,24 +65,24 @@ const styles = StyleSheet.create({
     },
     pomodoroTimeLeft: {
         color: 'white',
-        fontSize: 40,
+        fontSize: responsiveFontSize(6),
         fontWeight: 'bold'
     },
     pomodoroLeft: {
         color: colors.theme_gray,
-        fontSize: 14,
-        marginVertical: 5,
+        fontSize: responsiveFontSize(2),
+        marginVertical: responsiveHeight(1),
         fontWeight: 'bold'
     },
     buttonContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10,
+        marginVertical: responsiveHeight(1.8),
         rowGap: 10,
     },
     currentTask: {
         color: 'white',
-        fontSize: 14,
+        fontSize: responsiveFontSize(2),
         marginVertical: 5,
         fontWeight: 'bold'
     },
@@ -96,8 +97,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.theme_dark,
         borderRadius: 50,
         padding: 10,
-        width: 50,
-        height: 50,
+        width: responsiveHeight(7),
+        height: responsiveHeight(7),
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -105,8 +106,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.theme_dark,
         borderRadius: 50,
         padding: 10,
-        width: 90,
-        height: 90,
+        width: responsiveHeight(11.5),
+        height: responsiveHeight(11.5),
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
         backgroundColor: colors.theme_dark,
         borderRadius: 50,
         padding: 10,
-        width: 50,
-        height: 50,
+        width: responsiveHeight(7),
+        height: responsiveHeight(7),
         alignItems: 'center',
         justifyContent: 'center',
     }

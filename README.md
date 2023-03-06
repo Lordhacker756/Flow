@@ -12,6 +12,7 @@ Here's what all I learn't and what I'm still yet to learn  along the journey to 
 - User Registration using Firebase✅
 - React Navigation (Stack + Tab)✅
 - Using Doughnut Charts✅
+- Showing Detailed Statistics using Line Chart✅
 - Styling Header and Bottom Navigation✅
 - Rendering Lists (Scroll View and Flatlist)✅
 - ReduxToolkit + ReduxThunk (⚠️Still trying to impliment)
@@ -37,6 +38,12 @@ Here's what all I learn't and what I'm still yet to learn  along the journey to 
   <div>
     <img src="./designs/Notification.jpg" width="25%">
     <img src="./designs/AllTasks.jpg" width="25%">
+    <img src="./designs/ViewTasks.jpg" width="25%">
+  </div>
+  <div>
+    <img src="./designs/Pomodoro.jpg" width="25%">
+    <img src="./designs/AddTask.jpg" width="25%">
+    <img src="./designs/Statistics.jpg" width="25%">
   </div>
 </div>
 
