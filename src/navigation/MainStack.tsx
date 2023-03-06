@@ -10,7 +10,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {width} from '../constants/dimesions';
+
 const Tab = createBottomTabNavigator();
 
 const Header = ({navigation}) => {
