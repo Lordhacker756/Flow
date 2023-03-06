@@ -10,6 +10,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {BlurView} from '@react-native-community/blur';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,11 +41,11 @@ export default function MainStack() {
         tabBarInactiveTintColor: colors.theme_gray,
         tabBarStyle: {
           position: 'absolute',
-          bottom: 25,
+          bottom: 10,
           left: 20,
           right: 20,
           elevation: 10,
-          backgroundColor: 'black',
+          backgroundColor: 'rgba(0, 0, 0, 0.9)',
           borderColor: colors.theme_red,
           borderTopColor: 'transparent',
           borderRadius: 15,
@@ -65,7 +66,9 @@ export default function MainStack() {
                 color={focused ? colors.theme_red : colors.theme_gray}
               />
               <Text
-                style={{color: focused ? colors.theme_red : colors.theme_gray}}>
+                style={{
+                  color: focused ? colors.theme_red : colors.theme_gray,
+                }}>
                 Home
               </Text>
             </View>
@@ -85,7 +88,9 @@ export default function MainStack() {
                 color={focused ? colors.theme_red : colors.theme_gray}
               />
               <Text
-                style={{color: focused ? colors.theme_red : colors.theme_gray}}>
+                style={{
+                  color: focused ? colors.theme_red : colors.theme_gray,
+                }}>
                 Tasks
               </Text>
             </View>
@@ -141,7 +146,9 @@ export default function MainStack() {
                 color={focused ? colors.theme_red : colors.theme_gray}
               />
               <Text
-                style={{color: focused ? colors.theme_red : colors.theme_gray}}>
+                style={{
+                  color: focused ? colors.theme_red : colors.theme_gray,
+                }}>
                 Statistics
               </Text>
             </View>
@@ -161,7 +168,9 @@ export default function MainStack() {
                 color={focused ? colors.theme_red : colors.theme_gray}
               />
               <Text
-                style={{color: focused ? colors.theme_red : colors.theme_gray}}>
+                style={{
+                  color: focused ? colors.theme_red : colors.theme_gray,
+                }}>
                 Profile
               </Text>
             </View>

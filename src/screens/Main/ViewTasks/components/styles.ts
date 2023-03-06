@@ -1,54 +1,64 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../../../constants/colors';
 import { height, width } from '../../../../constants/dimesions';
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize
+} from "react-native-responsive-dimensions";
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 16,
+        marginTop: responsiveHeight(2),
     },
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottom: 16,
-        paddingHorizontal: 16,
+        marginBottom: responsiveHeight(2),
+        paddingHorizontal: responsiveHeight(2),
+    },
+    daysList: {
+        flexDirection: 'row',
+        width: responsiveWidth(100),
+        gap: responsiveWidth(1.5),
+        justifyContent: 'space-evenly',
     },
     month: {
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.6),
         fontWeight: 'bold',
         color: colors.theme_red,
     },
     year: {
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.6),
         fontWeight: 'bold',
         color: colors.theme_red,
     },
     day: {
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 12,
-        width: 50,
-        height: 80,
+        paddingHorizontal: responsiveWidth(1.5),
+        width: responsiveWidth(12.5),
+        height: responsiveHeight(10),
         borderRadius: 50,
-        marginHorizontal: 4,
         backgroundColor: colors.theme_dark
     },
     date: {
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.5),
         fontWeight: 'bold',
         color: 'white',
     },
     dayName: {
-        fontSize: 14,
+        fontSize: responsiveFontSize(1.5),
         color: 'white',
     },
     dates: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        paddingHorizontal: 16,
+        paddingHorizontal: responsiveWidth(2),
         justifyContent: 'space-between',
         alignItems: 'center',
-        columnGap: 10,
+        columnGap: responsiveWidth(1.8),
     },
     buttonContainer: {
         flexDirection: 'row',
@@ -60,32 +70,37 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        marginTop: 20,
-        height: height * 0.6,
+        marginTop: responsiveHeight(2),
+        height: responsiveHeight(70),
+    },
+    tasksList: {
+        width: '100%',
+        paddingBottom: responsiveHeight(8),
     },
     dayTaskContainer: {
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignItems: 'center',
-        width: width * 0.9,
-        marginTop: 20,
+        width: responsiveWidth(90),
+        marginHorizontal: responsiveWidth(5),
+        marginTop: responsiveHeight(2.5),
     },
     taskRight: {
         justifyContent: 'center',
         alignItems: 'flex-start',
         width: '80%',
         paddingHorizontal: 20,
-        height: 80,
+        height: responsiveHeight(11),
         borderRadius: 10,
         backgroundColor: colors.theme_dark,
     },
     taskTitle: {
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.5),
         fontWeight: 'bold',
         color: 'white',
     },
     taskStatus: {
-        fontSize: 14,
+        fontSize: responsiveFontSize(2),
         color: colors.theme_red,
     },
     noTaskContainer: {

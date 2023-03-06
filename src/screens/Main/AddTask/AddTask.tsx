@@ -23,8 +23,8 @@ import {width} from '../../../constants/dimesions';
 const AddTask = ({navigation}) => {
   const [isDateVisible, setDateVisible] = useState(false);
   const [isTimeVisible, setTimeVisible] = useState(false);
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState(new Date());
+  const [date, setDate] = useState('Select Date');
+  const [time, setTime] = useState('Select Time');
   const [workingSessions, setWorkingSessions] = useState(2);
   const [longBreak, setLongBreak] = useState(15);
   const [shortBreak, setShortBreak] = useState(5);
@@ -47,7 +47,9 @@ const AddTask = ({navigation}) => {
               onPress={() => {
                 setDateVisible(true);
               }}>
-              <Text style={styles.inputText}>{date.toDateString()}</Text>
+              <Text style={styles.inputText}>
+                {date === 'Select Date' ? date : date.toDateString()}
+              </Text>
               <Feather name="calendar" size={20} color="white" />
             </Pressable>
             <DateTimePickerModal
@@ -71,7 +73,9 @@ const AddTask = ({navigation}) => {
               onPress={() => {
                 setTimeVisible(true);
               }}>
-              <Text style={styles.inputText}>{time.toLocaleTimeString()}</Text>
+              <Text style={styles.inputText}>
+                {time === 'Select Time' ? time : time.toLocaleTimeString()}
+              </Text>
               <Ioncicons name="time-outline" size={20} color="white" />
             </Pressable>
             <DateTimePickerModal

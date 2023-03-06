@@ -7,6 +7,7 @@ const Notifications = () => {
   return (
     <View style={styles.pageContainer}>
       <FlatList
+        contentContainerStyle={styles.notificationsContainer}
         showsVerticalScrollIndicator={false}
         data={notifications}
         renderItem={({item}) => (

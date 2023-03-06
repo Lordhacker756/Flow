@@ -1,34 +1,39 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../../constants/colors';
 import { width } from '../../../constants/dimesions';
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize
+} from "react-native-responsive-dimensions";
 
 const styles = StyleSheet.create({
     pageContainer: {
         flex: 1,
-        paddingHorizontal: 20,
+        paddingHorizontal: responsiveWidth(5),
         backgroundColor: 'black'
     },
     inputContainer: {
-        marginVertical: 10,
-        rowGap: 10
+        marginVertical: responsiveHeight(1.0),
+        rowGap: responsiveHeight(0.8)
     },
     inputTitle: {
         color: 'white',
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.6),
         fontWeight: 'bold'
     },
     input: {
         backgroundColor: colors.theme_dark,
         color: 'white',
-        paddingHorizontal: 15,
-        paddingVertical: 10,
+        paddingHorizontal: responsiveWidth(4),
+        paddingVertical: responsiveHeight(1),
         borderRadius: 10
     },
     select_input: {
         backgroundColor: colors.theme_dark,
         color: 'white',
-        paddingHorizontal: 15,
-        paddingVertical: 10,
+        paddingHorizontal: responsiveWidth(4),
+        paddingVertical: responsiveHeight(1.5),
         borderRadius: 10,
         borderWidth: 0,
     },
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     halfInputContainer: {
-        width: width * 0.45 - 10,
+        width: responsiveWidth(50) - 20,
     },
     specialInput: {
         flexDirection: 'row',
@@ -44,8 +49,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: colors.theme_dark,
         color: 'white',
-        paddingVertical: 10,
-        paddingHorizontal: 15,
+        paddingHorizontal: responsiveWidth(4),
+        paddingVertical: responsiveHeight(1.5),
         marginVertical: 5,
         borderRadius: 10
     },
@@ -53,22 +58,23 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        columnGap: 20
+        columnGap: responsiveWidth(2.5)
     },
     selectValue: {
         color: colors.theme_gray,
-        fontSize: 16,
+        fontSize: responsiveFontSize(2.2),
         fontWeight: 'bold',
         paddingHorizontal: 10
     },
     button: {
         backgroundColor: colors.theme_red,
-        paddingVertical: 15,
+        paddingHorizontal: responsiveWidth(4),
+        paddingVertical: responsiveHeight(1.5),
         borderRadius: 10,
     },
     buttonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.5),
         fontWeight: 'bold',
         textAlign: 'center'
     },

@@ -67,18 +67,22 @@ const WeeklyCalendar = ({month, year}) => {
           </TouchableOpacity>
         </View>
       </View>
-      <FlatList
-        horizontal
-        data={days}
-        renderItem={renderItem}
-        keyExtractor={item => item.date.format('YYYY-MM-DD')}
-      />
+      <View style={styles.daysList}>
+        <FlatList
+          horizontal
+          contentContainerStyle={styles.daysList}
+          data={days}
+          renderItem={renderItem}
+          keyExtractor={item => item.date.format('YYYY-MM-DD')}
+        />
+      </View>
       <View style={styles.taskContainer}>
         {/* dayTasks[selectedDate.format('YYYY-MM-DD')] */}
         {selectedDate.day() % 2 == 0 ? (
           <FlatList
             // data={dayTasks[selectedDate.format('YYYY-MM-DD')]}
             data={dayTasks['2023-04-06']}
+            contentContainerStyle={styles.tasksList}
             showsVerticalScrollIndicator={false}
             renderItem={({item}) => (
               <View style={styles.dayTaskContainer}>

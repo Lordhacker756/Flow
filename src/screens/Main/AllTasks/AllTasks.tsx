@@ -7,7 +7,9 @@ import {tasks} from '../../../data';
 const AllTasks = ({navigation}) => {
   return (
     <View style={styles.pageContainer}>
-      <ScrollView style={styles.taskList} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.taskList}
+        showsVerticalScrollIndicator={false}>
         {tasks.map((task, index) => (
           <View style={styles.taskItem} key={index}>
             <View>

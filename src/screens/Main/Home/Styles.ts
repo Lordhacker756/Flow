@@ -1,5 +1,11 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../constants/colors";
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize
+} from "react-native-responsive-dimensions";
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -7,7 +13,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'black'
     },
     title: {
-        fontSize: 30,
+        fontSize: responsiveFontSize(4),
         fontWeight: "bold",
         color: 'white'
     },
@@ -16,14 +22,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         marginVertical: 20,
-        width: '100%',
+        width: responsiveWidth(100) - 40,
         backgroundColor: colors.theme_dark,
         borderRadius: 10,
-        padding: 10,
+        columnGap: responsiveWidth(3),
+        padding: responsiveWidth(3),
     },
 
     progressContainer: {
-        width: '60%',
+        width: responsiveWidth(50),
         flexDirection: "column",
         alignItems: "flex-start",
         marginVertical: 20,
@@ -32,12 +39,12 @@ const styles = StyleSheet.create({
     },
     progressText: {
         color: "white",
-        fontSize: 18,
+        fontSize: responsiveFontSize(2.5),
         fontWeight: "bold",
     },
     taskText: {
         color: colors.theme_gray,
-        fontSize: 12,
+        fontSize: responsiveFontSize(1.8),
         fontWeight: "bold",
     },
     taskHeader: {
@@ -49,12 +56,12 @@ const styles = StyleSheet.create({
     },
     taskHeaderText: {
         color: "white",
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.8),
         fontWeight: "bold",
     },
     taskHeaderButton: {
         color: colors.theme_red,
-        fontSize: 16,
+        fontSize: responsiveFontSize(2.0),
         fontWeight: "bold",
     },
     graphContainer: {
@@ -75,7 +82,7 @@ const styles = StyleSheet.create({
     taskList: {
         width: '100%',
         flexDirection: "column",
-        height: 380,
+        height: responsiveHeight(40),
         paddingBottom: 20,
     },
     taskItem: {
@@ -89,12 +96,12 @@ const styles = StyleSheet.create({
     },
     taskItemTitle: {
         color: "white",
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.8),
         fontWeight: "bold",
     },
     taskDuration: {
         color: colors.theme_gray,
-        fontSize: 14,
+        fontSize: responsiveFontSize(2.0),
         marginTop: 5,
         fontWeight: "bold",
     },
