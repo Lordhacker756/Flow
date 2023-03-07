@@ -23,7 +23,7 @@ const settings = [
     {
         name: 'Logout',
         icon: 'logout',
-        family: 'MaterialIcons',
+        family: 'AntDesign',
     },
 ]
 

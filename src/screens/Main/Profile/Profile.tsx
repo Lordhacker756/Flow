@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ToastAndroid} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Feather from 'react-native-vector-icons/Feather';
@@ -9,7 +9,11 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {settings} from '../../../data';
 
+import {app} from '../../../config/firebase';
+import {getAuth} from 'firebase/auth';
+
 const Profile = () => {
+  const auth = getAuth(app);
   return (
     <View style={styles.pageContainer}>
       <View style={styles.profilePicContainer}>
@@ -27,22 +31,27 @@ const Profile = () => {
       </View>
       <View style={styles.options}>
         {settings.map((item, index) => (
-          <TouchableOpacity style={styles.option} key={index}>
+          <TouchableOpacity
+            style={styles.option}
+            key={index}
+            onPress={() => {
+              if (item.name === 'Logout') {
+                auth.signOut();
+                ToastAndroid.show(
+                  'Thanks For Trying The App😄',
+                  ToastAndroid.SHORT,
+                );
+              }
+            }}>
             {item.family === 'FontAwesome5' ? (
               <FontAwesome5
                 name={item.icon}
                 size={25}
                 color={colors.theme_red}
               />
-            ) : item.family === 'AntDesign' ? (
+            ) : (
               <AntDesign name={item.icon} size={25} color={colors.theme_red} />
-            ) : item.family === 'MaterialIcons' ? (
-              <MaterialIcons
-                name={item.icon}
-                size={25}
-                color={colors.theme_red}
-              />
-            ) : null}
+            )}
 
             <Text style={styles.optionText}>{item.name}</Text>
           </TouchableOpacity>

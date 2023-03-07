@@ -62,6 +62,10 @@ const styles = StyleSheet.create({
         marginBottom: responsiveHeight(1),
         borderBottomColor: colors.theme_dark,
     },
+    optionText: {
+        color: 'white',
+        fontSize: responsiveFontSize(2),
+    },
 })
 
 export default styles;
