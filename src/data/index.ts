@@ -5,5 +5,6 @@ import dayTasks from './dayTasks';
 import weekStats from './weekStats';
 import monthStats from './monthStats';
 import yearStats from './yearStats';
+import settings from './Settings';
 
-export { notifications, tasks, categories, dayTasks, weekStats, monthStats, yearStats };
+export { notifications, tasks, categories, dayTasks, weekStats, monthStats, yearStats, settings };
