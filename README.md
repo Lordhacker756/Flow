@@ -30,20 +30,27 @@ Here's what all I learn't and what I'm still yet to learn  along the journey to 
     <img src="./designs/Login.jpg" width="25%">
     <img src="./designs/Register.jpg" width="25%">
   </div>
+   <br />
   <div>
     <img src="./designs/ForgotPassword.jpg" width="25%">
     <img src="./designs/OTP.jpg" width="25%">
     <img src="./designs/Home.jpg" width="25%">
   </div>
+   <br />
   <div>
     <img src="./designs/Notification.jpg" width="25%">
     <img src="./designs/AllTasks.jpg" width="25%">
     <img src="./designs/ViewTasks.jpg" width="25%">
   </div>
+   <br />
   <div>
     <img src="./designs/Pomodoro.jpg" width="25%">
     <img src="./designs/AddTask.jpg" width="25%">
     <img src="./designs/Statistics.jpg" width="25%">
+  </div>
+   <br />
+  <div>
+    <img src="./designs/Profile.jpg" width="25%">
   </div>
 </div>
 
