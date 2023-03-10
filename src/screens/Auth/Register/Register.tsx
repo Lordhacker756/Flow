@@ -10,7 +10,6 @@ import {
 import React, {useState, useEffect} from 'react';
 import Ioncicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Register = ({navigation}) => {
@@ -21,7 +20,6 @@ const Register = ({navigation}) => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const auth = getAuth();
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,12 +33,6 @@ const Register = ({navigation}) => {
       setError('Please fill in all fields');
     } else {
       try {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          credentials.email,
-          credentials.password,
-        );
-        await AsyncStorage.setItem('user', 'true');
         setLoading(false);
       } catch (error) {
         setError(error.message);

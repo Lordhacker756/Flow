@@ -9,11 +9,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {settings} from '../../../data';
 
-import {app} from '../../../config/firebase';
-import {getAuth} from 'firebase/auth';
-
 const Profile = () => {
-  const auth = getAuth(app);
   return (
     <View style={styles.pageContainer}>
       <View style={styles.profilePicContainer}>
@@ -36,7 +32,6 @@ const Profile = () => {
             key={index}
             onPress={() => {
               if (item.name === 'Logout') {
-                auth.signOut();
                 ToastAndroid.show(
                   'Thanks For Trying The App😄',
                   ToastAndroid.SHORT,

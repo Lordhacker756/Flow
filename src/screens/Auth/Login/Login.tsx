@@ -10,11 +10,14 @@ import {
 import React, {useState, useEffect} from 'react';
 import Ioncicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import auth from '@react-native-firebase/auth';
 
-const auth = getAuth();
+import {useDispatch} from 'react-redux';
+import {userLogin} from '../../../redux/slices/userSlice';
 
 const Login = ({navigation}) => {
+  const dispatch = useDispatch();
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
@@ -30,21 +33,29 @@ const Login = ({navigation}) => {
     }, 5000);
   }, [error]);
 
-  const handleLogin = async () => {
+  const handleLogin = () => {
     setLoading(true);
     if (credentials.email === '' || credentials.password === '') {
       setError('Please fill in all fields');
     } else {
-      try {
-        const userCredential = await signInWithEmailAndPassword(
-          auth,
-          credentials.email,
-          credentials.password,
-        );
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-      }
+      auth()
+        .signInWithEmailAndPassword(credentials.email, credentials.password)
+        .then(() => {
+          console.log('User signed in!');
+          dispatch(userLogin());
+          setLoading(false);
+        })
+        .catch(error => {
+          if (error.code === 'auth/email-already-in-use') {
+            setError('That email address is already in use!');
+          }
+
+          if (error.code === 'auth/invalid-email') {
+            setError('That email address is invalid!');
+          }
+
+          console.error(error);
+        });
     }
   };
 

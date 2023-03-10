@@ -2,13 +2,11 @@ import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import tasks from '../../../data/Tasks';
-import {getAuth, signOut} from 'firebase/auth';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import colors from '../../../constants/colors';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const Home = ({navigation}) => {
-  const auth = getAuth();
   return (
     <View style={styles.container}>
       <View>

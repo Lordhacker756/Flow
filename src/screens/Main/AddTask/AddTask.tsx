@@ -6,7 +6,10 @@ import {
   TouchableOpacity,
   ToastAndroid,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+
+import {useSelector, useDispatch} from 'react-redux';
+import {addTask} from '../../../redux/slices/taskSlice';
 
 import styles from './styles';
 import {categories} from '../../../data';
@@ -28,15 +31,51 @@ const AddTask = ({navigation}) => {
   const [workingSessions, setWorkingSessions] = useState(2);
   const [longBreak, setLongBreak] = useState(15);
   const [shortBreak, setShortBreak] = useState(5);
-  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
-    undefined,
-  );
+  const [selected, setSelected] = React.useState('');
+  const [title, setTitle] = useState('');
+
+  const dispatch = useDispatch();
+
+  const addTask = () => {
+    if (
+      date !== 'Select Date' &&
+      time !== 'Select Time' &&
+      selected !== undefined &&
+      title
+    ) {
+      const task = {
+        title,
+        category: selected,
+        date,
+        time,
+        workingSessions,
+        longBreak,
+        shortBreak,
+      };
+      dispatch(addTask('Hi'));
+      ToastAndroid.show('Task Added!', ToastAndroid.SHORT);
+      navigation.goBack();
+    } else {
+      ToastAndroid.show('Please fill all the fields', ToastAndroid.SHORT);
+    }
+  };
+
+  useEffect(() => {
+    console.log(selected);
+  }, [selected]);
 
   return (
     <View style={styles.pageContainer}>
       <View style={styles.inputContainer}>
         <Text style={styles.inputTitle}>Title</Text>
-        <TextInput style={styles.input} placeholder="Enter title" />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter title"
+          value={title}
+          onChangeText={val => {
+            setTitle(val);
+          }}
+        />
       </View>
       <View style={styles.row}>
         <View style={styles.halfParent}>
@@ -97,12 +136,12 @@ const AddTask = ({navigation}) => {
         <SelectList
           boxStyles={styles.select_input}
           arrowicon={<Feather name="chevron-down" size={20} color="white" />}
-          setSelected={val => setSelectedCategory(val)}
           data={categories}
           search={false}
           closeicon={<Ioncicons name="close" size={20} color="white" />}
           save="value"
           dropdownStyles={styles.input}
+          setSelected={setSelected}
         />
       </View>
       <View style={styles.inputContainer}>
@@ -162,8 +201,7 @@ const AddTask = ({navigation}) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          ToastAndroid.show('Task Created😄', ToastAndroid.SHORT);
-          navigation.navigate('Home');
+          addTask();
         }}>
         <Text style={styles.buttonText}>Create Task</Text>
       </TouchableOpacity>

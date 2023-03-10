@@ -1,66 +1,80 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+const userLogin = createAsyncThunk('login', () => {
+    AsyncStorage.setItem(
+        'user', 'true'
+    )
+    return true
+})
 
-const initialState = {
-    status: 'loggedOut',
-    userData: []
-}
+const userLogout = createAsyncThunk('logout', () => {
+    AsyncStorage.setItem(
+        'user', 'false'
+    )
+    return true
+})
 
-// Defining async thunk
-const userLogin = createAsyncThunk(
-    // Naming convention is slice/reducerName
-    'user/userLogin',
-    async (data, thunkAPI) => {
-        try {
-            await AsyncStorage.setItem('user', JSON.stringify(data));
-            return data;
-        } catch (error) {
-            return thunkAPI.rejectWithValue(error);
-        }
-    }
-)
-
-const userLogout = createAsyncThunk(
-    'user/userLogout',
-    async () => {
-        try {
-            AsyncStorage.removeItem('user');
+const getUser = createAsyncThunk('session', async () => {
+    try {
+        const user = await AsyncStorage.getItem('user');
+        if (user === 'true') {
             return true;
-        } catch (error) {
-            console.log('Error logging out: ', error)
+        } else {
+            return false;
         }
-    }
-)
-const userSlice = createSlice({
-    name: 'user',
-    initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-        builder.addCase(userLogin.pending, (state) => {
-            state.status = 'loggingIn';
-            state.userData = [];
-        }),
-
-            builder.addCase(userLogin.fulfilled, (state, action) => {
-                state.status = 'loggedIn';
-                state.userData = action.payload.data;
-            }),
-            builder.addCase(userLogin.rejected, (state, action) => {
-                state.status = 'loggedOut';
-                state.userData = [];
-            }
-            ),
-
-            builder.addCase(userLogout.pending, () => {
-                console.log("logging out user")
-            }),
-
-            builder.addCase(userLogout.fulfilled, () => {
-                console.log("User Logged out")
-            })
+    } catch (error) {
+        console.error(error);
+        throw error;
     }
 })
 
-export { userLogin, userLogout };
-export default userSlice.reducer;
+
+const userSlice = createSlice({
+    name: 'user',
+    initialState: {
+        user: 'false'
+    },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(userLogin.pending, (state, action) => {
+            state.user = 'pending'
+            console.log("Logging in user")
+        })
+        builder.addCase(userLogin.fulfilled, (state, action) => {
+            state.user = 'true'
+            console.log("User logged In Successfully")
+        })
+        builder.addCase(userLogout.pending, (state, action) => {
+            state.user = 'pending'
+        })
+        builder.addCase(userLogout.fulfilled, (state, action) => {
+            state.user = 'false'
+        })
+        builder.addCase(getUser.pending, (state, action) => {
+            state.user = 'pending'
+            console.log("Fetching the value from AsyncStorage")
+        })
+        builder.addCase(getUser.fulfilled, (state, action) => {
+            if (action.payload) {
+                state.user = 'true'
+                console.log("User found in localstorage")
+            }
+            else {
+                state.user = 'false'
+                console.log("User not found in localstorage")
+            }
+        })
+        builder.addCase(getUser.rejected, (state, action) => {
+            console.log("User not found in localstorage", action.payload)
+            state.user = 'false'
+        }
+        )
+    }
+})
+
+export const { } = userSlice.actions
+export default userSlice.reducer
+
+export { userLogin, userLogout, getUser }

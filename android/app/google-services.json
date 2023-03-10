@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "818977373117",
+    "project_id": "flow-hypermind",
+    "storage_bucket": "flow-hypermind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818977373117:android:d1d10b1c5f19d22d6030d4",
+        "android_client_info": {
+          "package_name": "com.flow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818977373117-1k8r1lhrm8jgithq44lpm3uv9ce495sn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKXFJFj9_psMUTVTLtXt7v1ZrJNHQG3dQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818977373117-1k8r1lhrm8jgithq44lpm3uv9ce495sn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
