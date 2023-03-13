@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     allTaskContainer: {
         paddingHorizontal: responsiveWidth(6),
         marginTop: responsiveHeight(2),
+        zIndex: -1,
     },
     allTaskHeader: {
         flexDirection: 'row',
